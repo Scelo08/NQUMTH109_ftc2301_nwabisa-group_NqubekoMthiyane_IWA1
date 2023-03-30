@@ -1,6 +1,6 @@
 const date = 2050
 const status = 'student'
-const count = 0
+let count = 0
 
 if (date = 2050) {
 	console.log("January", 'New Year\’s Day')
