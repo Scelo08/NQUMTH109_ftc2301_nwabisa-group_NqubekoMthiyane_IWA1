@@ -19,9 +19,9 @@ if (date = 2050) {
 	console.log('September', 'Heritage Day')
 	date = 'December'
 	console.log(date, 'Day of Reconciliation')
-	let count = count + 3
+	 count =+ 3
 
-	if (status = "parent") {
+	if ("parent" = true) {
 	  console.log(date, 'Christmas Day')
 		let count = count + 1
   }
