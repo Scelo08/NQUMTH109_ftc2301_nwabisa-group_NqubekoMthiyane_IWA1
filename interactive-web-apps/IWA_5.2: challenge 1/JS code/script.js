@@ -28,11 +28,11 @@ if (shoes && batteries && pens && shirts > 1000) {
 
 
 if (shipping === 0 && customers !== 1) { 
-    console.log(WARNING) 
+    console.log('WARNING') 
 }
 
 location = 'NK' ? console.log(WARNING) : console.log('price', currency, shoes + batteries + pens + shirts + shipping)
 
-customers = '1'
+const customers = 1
 const location = 'RSA'
-currency = null
+let currency = null
