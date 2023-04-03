@@ -12,9 +12,9 @@ if (location === NAM){
 
 let shoes = 300 * 1
 let toys = 100 * 5
-let shirts = 150 * 'NONE_SELECTED'
+let shirts = 150 * 2
 let batteries = 35 * 2
-let pens = 5 * 'NONE_SELECTED' 
+let pens = 5 * 20
 
 let shipping = null
 currency = $
