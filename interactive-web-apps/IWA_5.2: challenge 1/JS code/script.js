@@ -31,7 +31,7 @@ if (shipping === 0 && customers !== 1) {
     console.log('WARNING') 
 }
 
-location = 'NK' ? console.log(WARNING) : console.log('price', currency, shoes + batteries + pens + shirts + shipping)
+location = 'NK' ? console.log('WARNING') : console.log('price', currency, shoes + batteries + pens + shirts + shipping)
 
 const customers = 1
 const location = 'RSA'
