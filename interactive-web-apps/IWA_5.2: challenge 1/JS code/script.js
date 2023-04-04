@@ -1,22 +1,24 @@
-const FREE_WARNING = 'Free shipping only applies to single customer orders'
-const BANNED_WARNIN = 'Unfortunately we do not ship to your country of residence'
-const NONE_SELECTED = '0'
+ FREE_WARNING = 'Free shipping only applies to single customer orders'
+ BANNED_WARNIN = 'Unfortunately we do not ship to your country of residence'
+ NONE_SELECTED = '0'
 
-if (location === RSA) { shipping === 400 && currency === 'R' }
-
-if (location === NAM){
-    shipping === 600 && currency === '$'
-} else{
-    shipping === 800
+if (location === RSA) { 
+	shipping = 400 && currency === 'R' 
 }
 
-let shoes = 300 * 1
-let toys = 100 * 5
-let shirts = 150 * 2
-let batteries = 35 * 2
-let pens = 5 * 20
+if (location === NAM){
+    shipping = 600 && currency === '$'
+} else{
+    shipping = 800
+}
 
-let shipping = null
+ shoes = 300 * 1
+ toys = 100 * 5
+ shirts = 150 * 'NONE_SELECTED'
+ batteries = 35 * 2
+ pens = 5 * 'NONE_SELECTED'
+
+ shipping = null
 currency = $
 
 if (shoes + batteries + pens + shirts >= 1000) {
