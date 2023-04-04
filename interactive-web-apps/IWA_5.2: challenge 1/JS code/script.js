@@ -34,7 +34,7 @@ if (shipping === 0 && customers !== 1) {
     console.log('WARNING') 
 }
 
-let price = shoes + toys + shirts + batteries + pens
+let price = shoes + toys + shirts + batteries + pens + shipping
 
 location = 'NK' ? console.log('WARNING') : console.log('price', currency, shoes + batteries + pens + shirts + shipping)
 
