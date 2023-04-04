@@ -19,17 +19,20 @@ let pens = 5 * 20
 let shipping = null
 currency = $
 
-if (shoes && batteries && pens && shirts > 1000) {
-	if (location = NAM && customers < 2) {
-			if (location = RSA)
-		    shipping = 0 || calcShipping
-		}
+if (shoes + batteries + pens + shirts >= 1000) {
+	
+	// if (location = NAM && customers < 2) {
+	// 		if (location = RSA)
+	// 	    shipping = 0 || calcShipping
+	// 	}
 	}
 
 
 if (shipping === 0 && customers !== 1) { 
     console.log('WARNING') 
 }
+
+let price = shoes + toys + shirts + batteries + pens
 
 location = 'NK' ? console.log('WARNING') : console.log('price', currency, shoes + batteries + pens + shirts + shipping)
 
