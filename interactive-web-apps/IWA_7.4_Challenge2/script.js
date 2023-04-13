@@ -1,4 +1,5 @@
 const nickname= "Timmy";
 const firstname = "Timothy";
+const msgName = nickname || firstname
 
-console.log(`Good Morning, ${nickname} || ${firstname}!`) // Side ticks were not added.
+console.log(`Good Morning, ${msgName}!`) // Side ticks were not added.
