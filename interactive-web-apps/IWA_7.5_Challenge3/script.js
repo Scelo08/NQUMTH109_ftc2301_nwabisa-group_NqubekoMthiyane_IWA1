@@ -14,10 +14,6 @@ const leoOwed = Math.abs(parseFloat(leoBalance))
 
 const sarahOwed = Math.abs(parseFloat(sarahBalance))
 
-
- 
-
-
 const owed = sarahOwed + leoOwed
 
 const thousands = Math.trunc(owed/1000) 
