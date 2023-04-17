@@ -12,31 +12,31 @@ const sarahStreet = 'William Close'
 const sarahPostal = '0310'
 
 // Only change below this line
-console.log(balance)
+
 
 const leo = {
-	name : leoName + leoSurname,
-	balance : Math.abs(parseFloat(leoBalance)),
-	access_id : "47afb389-8014-4d0b-aff3-e40203d2107f",
-	age : 24,
-	address = {
-		number : leoNumber,
-		street : leoStreet,
-		postalCode : leoPostal,
+	name: leoName,
+	balance: Math.abs(parseFloat(leoBalance)),
+	accessId: "47afb389-8014-4d0b-aff3-e40203d2107f",
+	age: 24,
+	address: {
+		number: parseInt(leoNumber),
+		street: leoStreet,
+		 'postal-code' : leoPostal
 	}
-}
+};
 
-const sarah ={
-	name : sarahName.trim() + sarahSurname.trim(),
-	age : 62,
-	access_id : "6b279ae5-5657-4240-80e9-23f6b635f7a8",
-	balance : sarahBalance
-	address = {
-		number: sarahNumber,
+const sarah = {
+	name: sarahName.trim() + " " + sarahSurname.trim(),
+	age: 62,
+	accessId: "6b279ae5-5657-4240-80e9-23f6b635f7a8",
+	balance : Math.abs(parseFloat(sarahBalance)),
+	address: {
+		number: parseInt(sarahNumber),
 		street: sarahStreet,
-		postalCode: sarahPostal,
+		 'postal-code': sarahPostal
 	}
-}
+};
 
-console.log(leo, leo[address][postal-code])
-console.log(sarah, sarah[address][postal-code])
+console.log(leo, leo.address['postal-code']);
+console.log(sarah, sarah.address['postal-code']);
