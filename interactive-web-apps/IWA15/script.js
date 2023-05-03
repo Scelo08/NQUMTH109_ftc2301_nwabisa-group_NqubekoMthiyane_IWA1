@@ -12,6 +12,8 @@ const data = {
 
 const [first, second, third] = data.lists.map(item => item[1]);
 
+console.log(second)
+
 const result = []
 
 
