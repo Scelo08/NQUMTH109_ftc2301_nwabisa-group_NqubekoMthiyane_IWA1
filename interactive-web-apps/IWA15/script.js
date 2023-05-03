@@ -14,16 +14,18 @@ const [first, second, third] = data.lists.map(item => item[1]);
 
 const result = []
 
-const extractBiggest = () => {
-	if (first[first.length - 1] > second[second.length - 1]) {
-		return first
-	}
 
-	if (third.length > 0 && third[third.length - 1] > first[first.length - 1]) {
-		return third
+const extractBiggest = () => {
+	if (first[first.length - 1] > second[second.length - 1] && first[first.length - 1] > third[third.length - 1]) {
+		return first.pop()
+
+	} else if (second[second.length - 1] > third[third.length - 1]) {
+		return second.pop()
+
+	} else { 
+		return third.pop()
+		
 	}
-	
-	return second
 }
 
 // Only edit above
