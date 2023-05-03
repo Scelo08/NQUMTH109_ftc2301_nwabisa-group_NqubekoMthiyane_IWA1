@@ -77,11 +77,10 @@ const MONTHS = [
     console.log(fragment);
   
    const title = document.createElement("h2");
-    title.innerText = `${id}`;
+    title.innerHTML = `${id}`;
     fragment.appendChild(title);
   
     const list = document.createElement("dl");
-    
     const eventDate = new Date(date);
    
  
