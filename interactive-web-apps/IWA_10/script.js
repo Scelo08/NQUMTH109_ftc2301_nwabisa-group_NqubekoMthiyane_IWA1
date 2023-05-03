@@ -53,20 +53,20 @@ const futureId = 9
 
 // Do not change code above this comment
 
-if (holidays[`${futureId}`]) {
-    console.log(holidays[`${futureId}`].name);
+if (holidays[`${futureId}`]) { //Use back ticks.
+    console.log(holidays[`${futureId}`].name); //Use sqaure brackets for objects.
 } else {
     console.log(`ID ${futureId} not created yet`)
 }
 
-copied = {
-    id: holidays[christmas].id,
+copied = { 
+    id: holidays[christmas].id, //Organize id,name, and date in an object
     name: 'X-mas Day',
     date: holidays[christmas].date,
 }
 
 correctDate = new Date(copied.date)
-correctDate.setHours(0)
+correctDate.setHours(0) //Use set for hours and minutes
 correctDate.setMinutes(0)
 
 
