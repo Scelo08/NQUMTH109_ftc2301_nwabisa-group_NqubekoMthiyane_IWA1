@@ -44,7 +44,7 @@ reserve = selector(reserve)
 checkout = selector(checkout)
 checkin = selector(checkin)
 
-checkin.0.color = none
+canCheckin.0.color = none
 status.0.style.color = STATUS_MAP.status.color
 reserve.0 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
 checkout.0 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'

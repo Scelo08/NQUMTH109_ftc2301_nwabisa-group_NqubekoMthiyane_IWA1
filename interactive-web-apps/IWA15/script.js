@@ -12,7 +12,7 @@ const data = {
 
 const [first, second, third] = data.lists.map(item => item[1]);
 
-console.log(second)
+console.log(first)
 
 const result = []
 
