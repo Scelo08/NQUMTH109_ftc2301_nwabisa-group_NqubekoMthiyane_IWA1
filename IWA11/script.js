@@ -1,34 +1,52 @@
 // script.js
 
-const 1-root = document(order1),
-const 1-biscuits: document(biscuits),
-const 1-donuts: document(donuts),
-const 1-pancakes: document(pancakes),
-const 1-status: document(status)
+// Order 1
+const order1 = document.querySelector('[data-key="order1"]');
+const biscuits1 = order1.querySelector('.biscuits .count');
+const donuts1 = order1.querySelector('.donuts .count');
+const pancakes1 = order1.querySelector('.pancakes .count');
+const status1 = order1.querySelector('.status dd');
 
-const 2-root = document(order2),
-const 2-biscuits: document(biscuits),
-const 2-donuts: document(donuts),
-const 2-pancakes: document(pancakes),
-const 2-status: document(status)
+const biscuits1Count = order1.getAttribute('data-biscuits');
+const donuts1Count = order1.getAttribute('data-donuts');
+const pancakes1Count = order1.getAttribute('data-pancakes');
+const isDelivered1 = order1.getAttribute('data-delivered') === 'true';
 
-const 3-root = document(order3),
-const 3-biscuits: document(biscuits),
-const 3-donuts: document(donuts),
-const 3-pancakes: document(pancakes),
-const 3-status: document(status)
+biscuits1.textContent = biscuits1Count;
+donuts1.textContent = donuts1Count;
+pancakes1.textContent = pancakes1Count;
+status1.textContent = isDelivered1 ? 'Delivered' : 'Pending';
 
-1-biscuits= 1-root.biscuits,
-1-donuts = 1-root.donuts,
-1-pancakes = 1-root.pancakes,
-1-status = 1-root.status ? Delivered : Pending
+// Order 2
+const order2 = document.querySelector('[data-key="order2"]');
+const biscuits2 = order2.querySelector('.biscuits .count');
+const donuts2 = order2.querySelector('.donuts .count');
+const pancakes2 = order2.querySelector('.pancakes .count');
+const status2 = order2.querySelector('.status dd');
 
-2-biscuits= 2-root.biscuits,
-2-donuts = 2-root.donuts,
-2-pancakes = 2-root.pancakes,
-2-status = 2-root.status ? Delivered : Pending
+const biscuits2Count = order2.getAttribute('data-biscuits');
+const donuts2Count = order2.getAttribute('data-donuts');
+const pancakes2Count = order2.getAttribute('data-pancakes');
+const isDelivered2 = order2.getAttribute('data-delivered') === 'true';
 
-3-biscuits= 3-root.biscuits,
-3-donuts = 3-root.donuts,
-3-pancakes = 3-root.pancakes,
-3-status = 3-root.status ? Delivered : Pending
+biscuits2.textContent = biscuits2Count;
+donuts2.textContent = donuts2Count;
+pancakes2.textContent = pancakes2Count;
+status2.textContent = isDelivered2 ? 'Delivered' : 'Pending';
+
+// Order 3
+const order3 = document.querySelector('[data-key="order3"]');
+const biscuits3 = order3.querySelector('.biscuits .count');
+const donuts3 = order3.querySelector('.donuts .count');
+const pancakes3 = order3.querySelector('.pancakes .count');
+const status3 = order3.querySelector('.status dd');
+
+const biscuits3Count = order3.getAttribute('data-biscuits');
+const donuts3Count = order3.getAttribute('data-donuts');
+const pancakes3Count = order3.getAttribute('data-pancakes');
+const isDelivered3 = order3.getAttribute('data-delivered') === 'true';
+
+biscuits3.textContent = biscuits3Count;
+donuts3.textContent = donuts3Count;
+pancakes3.textContent = pancakes3Count;
+status3.textContent = isDelivered3 ? 'Delivered' : 'Pending';
