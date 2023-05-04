@@ -52,9 +52,7 @@ const handleAddToggle = (event) => {
 }
 
 
-const handleAddSubmit = (event) => {
-    
-}
+const handleAddSubmit = (event) => {}
 
 
 const handleEditToggle = (event) => {}
