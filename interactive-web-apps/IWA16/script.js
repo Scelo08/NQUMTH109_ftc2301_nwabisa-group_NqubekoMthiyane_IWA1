@@ -74,7 +74,7 @@ const MONTHS = [
    
   
     const fragment = document.createDocumentFragment();
-    console.log(fragment);
+    //console.log(fragment);
   
    const title = document.createElement("h2");
     title.innerText = `${id}`;
