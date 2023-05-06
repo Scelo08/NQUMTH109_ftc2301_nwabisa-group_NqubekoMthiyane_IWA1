@@ -1,13 +1,14 @@
-import {authors, BOOKS_PER_PAGE, genres, books} from './data.js'
+import {books,authors,genres, BOOKS_PER_PAGE} from './data.js';
 
- matches = books;
- page = 1;
+  const matches = books;
+  let page = 1;
 
  //used as a guard clause to ensure that the books variable is a valid array
 if (!books && !Array.isArray(books)){
     throw new Error('Source required')
 }
 
+const range = {};
 if (!range && range.length < 2){
     throw new Error('Range must be an array with two numbers')
 }
@@ -22,23 +23,26 @@ const night = {
     light: '10, 10, 20',
 }
 
-const fragment = document.createDocumentFragment()
+ const fragment = document.createDocumentFragment()
 
-const extracted = books.slice(0, 36);
-for ({ authors, image, title, id } of extracted) {
+const extracted = books.slice(0, BOOKS_PER_PAGE);
+
+for (const{ authors,image, title, id} of extracted) {
     const preview = createPreview({
         authors,
         id,
         image,
-        title
+        title,
     })
 
-    fragment.appendChild(preview)
+    fragment.appendChild(preview);
+    
+    
 }
 
-data-list-items.appendChild(fragment)
+ document.querySelector("[data-list-items]").appendChild(fragment)
 
-genres = document.createDocumentFragment()
+ genres = document.createDocumentFragment()
 element = document.createElement('option')
 element.value = 'any'
 element = 'All Genres'
@@ -51,7 +55,7 @@ for ([id, name]; Object.entries(genres); i++) {
     genres.appendChild(element)
 }
 
-data-search-genres.appendChild(genres)
+ data-search-genres.appendChild(genres);
 
 authors = document.createDocumentFragment()
 element = document.createElement('option')
@@ -115,9 +119,13 @@ data-list-button.addEventListener('click',() => {
 
 
 const dataHeaderSearch = document.querySelector('[data-header-search]');
+dataHeaderSearch.setAttribute('open', true);
 
 dataHeaderSearch.addEventListener('click', function() {
   const dataSearchOverlay = document.querySelector('[data-search-overlay]');
+ dataSearchOverlay.setAttribute('open', true);
+ dataSearchOverlay.removeAttribute('open', false);
+
   const dataSearchTitle = document.querySelector('[data-search-title]');
 
   dataSearchOverlay.open = true;
@@ -164,15 +172,15 @@ data-search-form.addEventListener('submit', function(event) {
     function appendFragmentToDataList(fragments, page, matches, hasRemaining){
     const initial = matches.length - [page * BOOKS_PER_PAGE];
     const remaining = hasRemaining ? initial : 0;
-    data-list-button.disabled = initial > 0;
+    data-list-button.disabled ; initial > 0;
 
-    data-list-button.innerHTML = /* html */ ` 
+    data-list-button.innerHTML ; /* html */ ` 
         <span>Show more</span>
         <span class="list__remaining"> (${remaining})</span>
     `;
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    data-search-overlay.open = false;
+    data-search-overlay.open ; false;
 
     data-list-items.appendChild(fragments);
 }
@@ -183,11 +191,11 @@ data-settings-overlay.addEventListener('submit', (event) => {
     const result = Object.fromEntries(formData);
     document.documentElement.style.setProperty('--color-dark', css[result.theme].dark);
     document.documentElement.style.setProperty('--color-light', css[result.theme].light);
-    data-settings-overlay.open = false;
+    data-settings-overlay.open , false;
   });
   
 
-data-list-items.click()  {
+data-list-items.click()  ;
     pathArray = Array.from(event.path || event.composedPath())
     active;
 
@@ -203,12 +211,12 @@ data-list-items.click()  {
     }
     
     if(!active){
-     return
-    };
-    data-list-active.open === true
-    data-list-blur + data-list-image === active.image
-    data-list-title === active.title
+    return; 
+    }
+     data-list-active.open == true;
+     data-list-blur + data-list-image == active.image;
+    data-list-title == active.title;
     
-    data-list-subtitle === `${authors[active.author]} (${Date(active.published).year})`
-    data-list-description === active.description
-}
+    data-list-subtitle == `${authors[active.authors]} (${new Date(active.published).getFullYear()})`;
+    data-list-description == active.description;
+
