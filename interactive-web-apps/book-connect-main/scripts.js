@@ -24,23 +24,36 @@ const night = {
 }
 
  const fragment = document.createDocumentFragment()
+let extracted = books.slice(0, BOOKS_PER_PAGE)
 
-const extracted = books.slice(0, BOOKS_PER_PAGE);
+const createPreview = (props) => {
+    const {author, id, image, title} = props
 
-for (const{ authors,image, title, id} of extracted) {
-    const preview = createPreview({
-        authors,
-        id,
-        image,
-        title,
-    })
-
-    fragment.appendChild(preview);
+    const element = document.createElement("button");
+    element.classList.add("preview");
+    element.dataset.preview = id;
+    element.innerHTML = /* html */ `
+    <img 
+        class="preview__image" 
+        src="${image}" 
+    />
     
-    
+    <div class="preview__info">
+        <h3 class="preview__title">${title}</h3>
+        <div class="preview__author">${authors[author]}</div>
+    </div>
+    `;
+
+    return element
+};
+
+for (const booksIndex of extracted) {
+    const preview = createPreview(booksIndex)
+    fragment.appendChild(preview)
 }
 
- document.querySelector("[data-list-items]").appendChild(fragment)
+document.querySelector("[data-list-items]").appendChild(fragment);
+
 
  genres = document.createDocumentFragment()
 element = document.createElement('option')
