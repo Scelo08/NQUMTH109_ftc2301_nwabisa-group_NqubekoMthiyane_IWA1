@@ -8,7 +8,7 @@ if (!books && !Array.isArray(books)){
     throw new Error('Source required')
 }
 
-const range = {};
+const range = [0, BOOKS_PER_PAGE];
 if (!range && range.length < 2){
     throw new Error('Range must be an array with two numbers')
 }
@@ -55,20 +55,20 @@ for (const booksIndex of extracted) {
 document.querySelector("[data-list-items]").appendChild(fragment);
 
 
- genres = document.createDocumentFragment()
+const genres = document.createDocumentFragment()
 element = document.createElement('option')
 element.value = 'any'
-element = 'All Genres'
+element.innerText = 'All Genres'
 genres.appendChild(element)
 
-for ([id, name]; Object.entries(genres); i++) {
-    document.createElement('option')
-    element.value = value
-    element.innerText = text
+for (const [id, name]of Object.entries(genres)) {
+    const option = document.createElement('option')
+    option.value = id
+    option.innerText = name
     genres.appendChild(element)
 }
 
- data-search-genres.appendChild(genres);
+ document.querySelector("[data-search-genres]").appendChild(genres);
 
 authors = document.createDocumentFragment()
 element = document.createElement('option')
@@ -83,11 +83,11 @@ for (const [id, name] of Object.entries(genres)) {
     authors.appendChild(element)
 }
 
-data-search-authors.appendChild(authors)
+document.querySelector(["data-search-authors"]).appendChild(authors)
 
 const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day';
-document.documentElement.style.setProperty('--color-dark', theme = 'night' ? night.dark : day.dark);
-document.documentElement.style.setProperty('--color-light', theme = 'night' ? night.light : day.light);
+document.documentElement.style.setProperty('--color-dark', theme === 'night' ? night.dark : day.dark);
+document.documentElement.style.setProperty('--color-light', theme === 'night' ? night.light : day.light);
 
 
 const listButton =  document.querySelector('.list-button');
