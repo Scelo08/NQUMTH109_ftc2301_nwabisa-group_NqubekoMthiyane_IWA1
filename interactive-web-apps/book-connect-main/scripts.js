@@ -65,7 +65,7 @@ for (const [id, name]of Object.entries(genres)) {
     const option = document.createElement('option')
     option.value = id
     option.innerText = name
-    genres.appendChild(element)
+    genres.appendChild(option)
 }
 
  document.querySelector("[data-search-genres]").appendChild(genres);
