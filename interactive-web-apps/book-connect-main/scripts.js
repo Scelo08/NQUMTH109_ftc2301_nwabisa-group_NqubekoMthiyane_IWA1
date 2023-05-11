@@ -1,5 +1,16 @@
 import {books,authors,genres, BOOKS_PER_PAGE} from './data.js';
 
+/**
+ * @typedef {Object} Book
+ * @property {string} id - The unique identifier for the book.
+ * @property {string} title - The title of the book.
+ * @property {string} author - The ID of the author of the book.
+ * @property {string} genre - The ID of the genre of the book.
+ * @property {string} image - The URL of the book's cover image.
+ * @property {number} price - The price of the book.
+ */
+
+
   const matches = books;
   let page = 1;
 
@@ -8,10 +19,24 @@ if (!books && !Array.isArray(books)){
     throw new Error('Source required')
 }
 
+/*** @typedef {Object} PageRange
+ * @property {number} start - The start of the range.
+ * @property {number} end - The end of the range.
+  */
+
 const range = [0, BOOKS_PER_PAGE];
 if (!range && range.length < 2){
     throw new Error('Range must be an array with two numbers')
 }
+
+/* @typedef {Object} ColorFix
+ * @property {Object} night - The colors for the night theme.
+ * @property {string} night.dark - The dark color for the night theme.
+ * @property {string} night.light - The light color for the night theme.
+ * @property {Object} day - The colors for the day theme.
+ * @property {string} day.dark - The dark color for the day theme.
+  @property {string} day.light - The light color for the day theme.
+  */
 
 const colorFix = {
     night : {
@@ -26,6 +51,16 @@ const colorFix = {
 
 const fragment = document.createDocumentFragment()
 let extracted = books.slice(0, BOOKS_PER_PAGE)
+
+/**
+ * 
+ * @typedef {Object} PreviewProps
+ * @property {string} author - The ID of the author of the book.
+* @property {string} id - The unique identifier for the book.
+* @property {string} image - The URL of the book's cover image.
+* @property {string} title - The title of the book.
+*
+ */
 
 const createPreview = (props) => {
     const {author, id, image, title} = props
@@ -89,7 +124,7 @@ for (const [id] of Object.entries(authors)) {
 
 const authorsList = document.querySelector(["data-search-authors"]).appendChild(authorsFragment)
 
-//
+//Theme Settings.
 
 document.querySelector('[data-settings-theme]').value = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'day' : 'night'
 let v = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'day' : 'night'
@@ -100,6 +135,9 @@ document.documentElement.style.setProperty('--color-light', colorFix[v].light);
 
 const settingsCancel = document.querySelector('[data-settings-cancel]')
 const settings = document.querySelector('[data-settings-overlay]')
+
+/** * @typedef {Object} RemainingProps
+ * The number of books remaining to be loaded. */
 
 const updateRemaining = () => {
     const remaining = books.length - (BOOKS_PER_PAGE * page)
@@ -112,6 +150,10 @@ const remaining = matches.length - page * BOOKS_PER_PAGE;
       <span class="list__remaining"> (${remaining > 0 ? remaining : 0})</span>
     `;
 
+/*@typedef {Object} SettingsButton
+ * @property {HTMLButtonElement} settingsCancel - The button to cancel settings.
+ * @property {HTMLDivElement} settings - The settings overlay.
+ * */
 const showSettings = (event) => {
     event.preventDefault()
     settings.showModal()
@@ -123,6 +165,8 @@ const showSettings = (event) => {
 
 settingsButton.addEventListener('click', showSettings)
 
+/* @typedef {Object} ShowMoreProps
+ The click event. */
 
 const showMore = (event) => {
     event.preventDefault()
@@ -159,10 +203,19 @@ const showMore = (event) => {
 
 showmoreButton.addEventListener("click", showMore) 
 
+/*@typedef {Object} OptionsButton
+ * @property {HTMLButtonElement} optionsButton - The button to open the options menu.
+ * @property {HTMLDivElement} optionsMenu - The options menu.
+ * @property {HTMLButtonElement} optionsCancel - The button to cancel the options menu.
+ * */
 
 const optionsButton = document.querySelector('[data-header-search]')
 const optionsMenu = document.querySelector('[data-search-overlay]')
 const optionsCancel = document.querySelector('[data-search-cancel]')
+
+/* @typedef {Object} ShowOptionsMenuProps
+ * @property {MouseEvent} event - The click event.
+*/
 
 const showOptionsMenu = (event) => { // event listerner for formsubmit
     event.preventDefault()
@@ -174,6 +227,10 @@ const showOptionsMenu = (event) => { // event listerner for formsubmit
 }
 
 optionsButton.addEventListener('click', showOptionsMenu)
+
+/*@typedef {Object} DataSearchButton
+ * @property {HTMLButtonElement} datasearchButton - The button to submit the search form.
+ * @property {HTMLFormElement} dataSearchForm - The search form. */
 
 const datasearchButton = document.querySelector('[data-search-overlay] [type="submit"]')
 const dataSearchForm = document.querySelector('[data-search-form]')
