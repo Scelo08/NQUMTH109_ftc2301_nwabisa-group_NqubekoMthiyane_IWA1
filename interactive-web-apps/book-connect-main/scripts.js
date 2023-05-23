@@ -47,7 +47,7 @@ const colorFix = {
         dark: '10, 10, 20',
         light: '255, 255, 255',
     },
-}
+};
 
 const fragment = document.createDocumentFragment()
 let extracted = books.slice(0, BOOKS_PER_PAGE)

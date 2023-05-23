@@ -1,6 +1,5 @@
 import {html} from './view.js'
 
-
 /**
  * A handler that fires when a user drags over any element inside a column. In
  * order to determine which column the user is dragging over the entire event
@@ -12,6 +11,8 @@ import {html} from './view.js'
  *
  * @param {Event} event 
  */
+
+
 const handleDragOver = (event) => {
     event.preventDefault();
     const path = event.path || event.composedPath()
@@ -35,13 +36,18 @@ const handleDragStart = (event) => {}
 const handleDragEnd = (event) => {}
 
 const handleHelpToggle = (event) => {
- if (html.help.overlay.hasAttribute('open')){
-    html.help.overlay.removeAttribute('open')
- } else {
-    html.help.overlay.setAttribute('open', true)
- }
+    html.help.overlay.show()
+
 
 }
+
+const handleHelpClose = () =>{
+    html.help.overlay.close()
+}
+
+html.help.overlay.addEventListener('click', handleHelpClose )
+
+
 const handleAddToggle = (event) => {
  if(html.add.overlay.hasAttribute('open')){
     html.add.overlay.removeAttribute('open')
@@ -52,8 +58,13 @@ const handleAddToggle = (event) => {
 }
 
 
-const handleAddSubmit = (event) => {}
 
+const handleAddSubmit = (event) => {
+    event.preventDefault();
+    const item = html.add.title.value;
+    
+}
+html.add.title.value.addEventListener('submit', handleAddSubmit)
 
 const handleEditToggle = (event) => {}
 const handleEditSubmit = (event) => {}
@@ -71,7 +82,8 @@ html.edit.cancel.addEventListener('click', handleEditToggle)
 html.edit.form.addEventListener('submit', handleEditSubmit)
 html.edit.delete.addEventListener('click', handleDelete)
 
-html.help.cancel.addEventListener('click', handleHelpToggle)
+
+
 html.other.help.addEventListener('click', handleHelpToggle)
 
 for (const htmlColumn of Object.values(html.columns)) {
